@@ -1,7 +1,7 @@
 {
-  "key": "PageOne",
-  "displayName": "Page One",
-  "description": "Page one type",
+  "key": "HomePageType",
+  "displayName": "Home Page Type",
+  "description": "Type for Home Page",
   "baseType": "page",
   "source": "",
   "sortOrder": 0,
@@ -19,12 +19,12 @@
   ],
   "mediaFileExtensions": [],
   "created": "2024-09-15T13:07:32.0392495+00:00",
-  "lastModified": "2024-09-15T13:08:06.2575853+00:00",
+  "lastModified": "2024-09-15T20:49:51.0066266+00:00",
   "lastModifiedBy": "jsunny@aldar.com",
   "properties": {
     "Block": {
       "type": "component",
-      "contentType": "BlockOne",
+      "contentType": "HomeSectionOneType",
       "displayName": "Content in Page One",
       "description": "",
       "localized": false,

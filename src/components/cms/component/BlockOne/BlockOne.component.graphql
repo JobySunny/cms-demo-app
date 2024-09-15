@@ -1,3 +1,0 @@
-fragment BlockOneData on BlockOne {
-  Title
-}

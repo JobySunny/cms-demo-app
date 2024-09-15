@@ -1,0 +1,3 @@
+fragment HomePageTypeData on HomePageType {
+  Block { ...HomeSectionOneTypePropertyData }
+}

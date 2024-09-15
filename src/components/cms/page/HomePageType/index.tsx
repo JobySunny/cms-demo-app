@@ -1,14 +1,14 @@
 import { OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
-import { PageOneDataFragmentDoc, type PageOneDataFragment } from "@/gql/graphql";
+import { HomePageTypeDataFragmentDoc, type HomePageTypeDataFragment } from "@/gql/graphql";
 import { getSdk } from "@/gql"
 
 /**
- * Page One
- * Page one type
+ * Home Page Type
+ * Type for Home Page
  */
-export const PageOnePage : CmsComponent<PageOneDataFragment> = ({ data, children }) => {
-    const componentName = 'Page One'
-    const componentInfo = 'Page one type'
+export const HomePageTypePage : CmsComponent<HomePageTypeDataFragment> = ({ data, children }) => {
+    const componentName = 'Home Page Type'
+    const componentInfo = 'Type for Home Page'
     return <div className="mx-auto px-2 container">
         <div className="font-bold italic">{ componentName }</div>
         <div>{ componentInfo }</div>
@@ -16,12 +16,12 @@ export const PageOnePage : CmsComponent<PageOneDataFragment> = ({ data, children
         { children && <div className="flex flex-col mt-4 mx-4">{ children }</div>}
     </div>
 }
-PageOnePage.displayName = "Page One (Page/PageOne)"
-PageOnePage.getDataFragment = () => ['PageOneData', PageOneDataFragmentDoc]
-PageOnePage.getMetaData = async (contentLink, locale, client) => {
+HomePageTypePage.displayName = "Home Page Type (Page/HomePageType)"
+HomePageTypePage.getDataFragment = () => ['HomePageTypeData', HomePageTypeDataFragmentDoc]
+HomePageTypePage.getMetaData = async (contentLink, locale, client) => {
     const sdk = getSdk(client);
     // Add your metadata logic here
     return {}
 }
 
-export default PageOnePage
+export default HomePageTypePage

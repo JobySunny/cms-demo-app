@@ -27,14 +27,14 @@ const documents = {
     "query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {\n  content: _Content(\n    where: {_metadata: {url: {default: {eq: $path}, base: {eq: $domain}}, version: {eq: $version}}}\n    locale: $locale\n  ) {\n    total\n    items {\n      ...PageData\n    }\n  }\n}": types.getContentByPathDocument,
     "fragment LinkData on ContentUrl {\n  base\n  hierarchical\n  default\n}": types.LinkDataFragmentDoc,
     "fragment IContentData on _IContent {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}": types.IContentDataFragmentDoc,
-    "fragment BlockOneData on BlockOne {\n  Title\n}": types.BlockOneDataFragmentDoc,
-    "fragment BlockOnePropertyData on BlockOneProperty {\n  Title\n}": types.BlockOnePropertyDataFragmentDoc,
+    "fragment HomeSectionOneTypeData on HomeSectionOneType {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}": types.HomeSectionOneTypeDataFragmentDoc,
+    "fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}": types.HomeSectionOneTypePropertyDataFragmentDoc,
     "fragment PageSeoSettingsData on PageSeoSettings {\n  MetaTitle\n  MetaDescription\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsDataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment TitleOneData on TitleOne {\n  Text\n}": types.TitleOneDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment ExperienceOneData on ExperienceOne {\n  Title\n  ...ExperienceData\n}": types.ExperienceOneDataFragmentDoc,
-    "fragment PageOneData on PageOne {\n  Block {\n    ...BlockOnePropertyData\n  }\n}": types.PageOneDataFragmentDoc,
+    "fragment HomePageTypeData on HomePageType {\n  Block {\n    ...HomeSectionOneTypePropertyData\n  }\n}": types.HomePageTypeDataFragmentDoc,
 };
 
 /**
@@ -110,11 +110,11 @@ export function gql(source: "fragment IContentData on _IContent {\n  _metadata {
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment BlockOneData on BlockOne {\n  Title\n}"): (typeof documents)["fragment BlockOneData on BlockOne {\n  Title\n}"];
+export function gql(source: "fragment HomeSectionOneTypeData on HomeSectionOneType {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment HomeSectionOneTypeData on HomeSectionOneType {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment BlockOnePropertyData on BlockOneProperty {\n  Title\n}"): (typeof documents)["fragment BlockOnePropertyData on BlockOneProperty {\n  Title\n}"];
+export function gql(source: "fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -138,7 +138,7 @@ export function gql(source: "fragment ExperienceOneData on ExperienceOne {\n  Ti
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment PageOneData on PageOne {\n  Block {\n    ...BlockOnePropertyData\n  }\n}"): (typeof documents)["fragment PageOneData on PageOne {\n  Block {\n    ...BlockOnePropertyData\n  }\n}"];
+export function gql(source: "fragment HomePageTypeData on HomePageType {\n  Block {\n    ...HomeSectionOneTypePropertyData\n  }\n}"): (typeof documents)["fragment HomePageTypeData on HomePageType {\n  Block {\n    ...HomeSectionOneTypePropertyData\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

@@ -1,3 +1,0 @@
-fragment BlockOnePropertyData on BlockOneProperty {
-  Title
-}

@@ -1,13 +1,13 @@
 // Auto generated dictionary
 import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
-import BlockOneComponent from "./BlockOne";
+import HomeSectionOneTypeComponent from "./HomeSectionOneType";
 import PageSeoSettingsComponent from "./PageSeoSettings";
 
 // Build dictionary
 export const componentDictionary : ComponentTypeDictionary = [
     { 
-        type: "BlockOne", 
-        component: BlockOneComponent 
+        type: "HomeSectionOneType", 
+        component: HomeSectionOneTypeComponent 
     },
     { 
         type: "PageSeoSettings", 

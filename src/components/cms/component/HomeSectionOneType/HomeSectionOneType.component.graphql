@@ -1,0 +1,6 @@
+fragment HomeSectionOneTypeData on HomeSectionOneType {
+  MainTitle
+  SecondaryTitle
+  Description
+  BannerImage { ...LinkData }
+}

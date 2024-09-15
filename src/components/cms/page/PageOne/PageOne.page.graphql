@@ -1,3 +1,0 @@
-fragment PageOneData on PageOne {
-  Block { ...BlockOnePropertyData }
-}

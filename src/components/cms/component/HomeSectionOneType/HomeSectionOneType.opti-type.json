@@ -1,0 +1,70 @@
+{
+  "key": "HomeSectionOneType",
+  "displayName": "Home - SectionOne Type",
+  "description": "First section of home page",
+  "baseType": "component",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod"
+  ],
+  "usage": [
+    "property",
+    "instance"
+  ],
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "created": "2024-09-15T13:05:59.7962886+00:00",
+  "lastModified": "2024-09-15T21:07:03.9343927+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "MainTitle": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Main Title",
+      "description": "Main block title of the page",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 100
+    },
+    "SecondaryTitle": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Secondary Title",
+      "description": "title displayed in  red.",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 100
+    },
+    "Description": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Secondary Title Description",
+      "description": "Description shown below secondary title.",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 255
+    },
+    "BannerImage": {
+      "type": "url",
+      "displayName": "Banner Image",
+      "description": "Background image to be displayed on Home Page Section One",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {}
+    }
+  }
+}

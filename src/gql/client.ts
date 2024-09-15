@@ -115,15 +115,20 @@ export const ExperienceOneDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
-export const BlockOnePropertyDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment BlockOnePropertyData on BlockOneProperty {
-  Title
+export const HomeSectionOneTypePropertyDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {
+  MainTitle
+  SecondaryTitle
+  Description
+  BannerImage {
+    ...LinkData
+  }
 }
     `;
-export const PageOneDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment PageOneData on PageOne {
+export const HomePageTypeDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HomePageTypeData on HomePageType {
   Block {
-    ...BlockOnePropertyData
+    ...HomeSectionOneTypePropertyData
   }
 }
     `;
@@ -132,12 +137,17 @@ export const PageDataFragmentDoc = /*#__PURE__*/ gql`
   ...IContentData
   ...BlankExperienceData
   ...ExperienceOneData
-  ...PageOneData
+  ...HomePageTypeData
 }
     `;
-export const BlockOneDataFragmentDoc = /*#__PURE__*/ gql`
-    fragment BlockOneData on BlockOne {
-  Title
+export const HomeSectionOneTypeDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment HomeSectionOneTypeData on HomeSectionOneType {
+  MainTitle
+  SecondaryTitle
+  Description
+  BannerImage {
+    ...LinkData
+  }
 }
     `;
 export const PageSeoSettingsDataFragmentDoc = /*#__PURE__*/ gql`
@@ -153,7 +163,7 @@ export const PageSeoSettingsDataFragmentDoc = /*#__PURE__*/ gql`
 export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
-  ...BlockOneData
+  ...HomeSectionOneTypeData
   ...PageSeoSettingsData
 }
     `;
@@ -189,7 +199,7 @@ export const getContentByIdDocument = /*#__PURE__*/ gql`
 ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${BlockOneDataFragmentDoc}
+${HomeSectionOneTypeDataFragmentDoc}
 ${PageSeoSettingsDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${PageDataFragmentDoc}
@@ -201,8 +211,8 @@ ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
-${PageOneDataFragmentDoc}
-${BlockOnePropertyDataFragmentDoc}`;
+${HomePageTypeDataFragmentDoc}
+${HomeSectionOneTypePropertyDataFragmentDoc}`;
 export const getContentByPathDocument = /*#__PURE__*/ gql`
     query getContentByPath($path: String!, $version: String, $locale: [Locales!], $domain: String) {
   content: _Content(
@@ -228,8 +238,8 @@ ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
-${PageOneDataFragmentDoc}
-${BlockOnePropertyDataFragmentDoc}`;
+${HomePageTypeDataFragmentDoc}
+${HomeSectionOneTypePropertyDataFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string, variables?: any) => Promise<T>;
 
