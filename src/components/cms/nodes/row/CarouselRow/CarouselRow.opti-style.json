@@ -1,0 +1,11 @@
+{
+  "key": "CarouselRow",
+  "displayName": "Carousel",
+  "nodeType": "row",
+  "isDefault": false,
+  "created": "2024-09-02T08:55:47.129124+00:00",
+  "createdBy": "remko.jantzen@optimizely.com",
+  "lastModified": "2024-09-02T08:55:47.129124+00:00",
+  "lastModifiedBy": "remko.jantzen@optimizely.com",
+  "settings": {}
+}

@@ -1,0 +1,37 @@
+{
+  "key": "PageOne",
+  "displayName": "Page One",
+  "description": "Page one type",
+  "baseType": "page",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod",
+    "routing"
+  ],
+  "usage": [
+    "instance"
+  ],
+  "mayContainTypes": [
+    "*"
+  ],
+  "mediaFileExtensions": [],
+  "created": "2024-09-15T13:07:32.0392495+00:00",
+  "lastModified": "2024-09-15T13:08:06.2575853+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "Block": {
+      "type": "component",
+      "contentType": "BlockOne",
+      "displayName": "Content in Page One",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "key": "ExperienceOne",
+  "displayName": "Experience One",
+  "description": "Experience Item",
+  "baseType": "experience",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod",
+    "routing"
+  ],
+  "usage": [
+    "instance"
+  ],
+  "mayContainTypes": [
+    "*"
+  ],
+  "mediaFileExtensions": [],
+  "created": "2024-09-15T13:04:00.3517755+00:00",
+  "lastModified": "2024-09-15T13:05:30.2721185+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "Title": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Experience Title",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 100
+    }
+  }
+}

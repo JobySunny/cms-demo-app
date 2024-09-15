@@ -1,0 +1,36 @@
+{
+  "key": "BlockOne",
+  "displayName": "Block One",
+  "description": "Block Item One",
+  "baseType": "component",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod"
+  ],
+  "usage": [
+    "property",
+    "instance"
+  ],
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "created": "2024-09-15T13:05:59.7962886+00:00",
+  "lastModified": "2024-09-15T13:07:10.3559474+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "Title": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Block Title",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 100
+    }
+  }
+}
