@@ -695,6 +695,7 @@ export type HighlightOptions = {
 export type HomePageType = IData & _IContent & _IPage & {
   __typename?: 'HomePageType';
   Block?: Maybe<HomeSectionOneTypeProperty>;
+  BlockTwo?: Maybe<HomeSectionOneTypeProperty>;
   /** @deprecated Use `_link` field instead */
   _children?: Maybe<QueryRef>;
   _deleted?: Maybe<Scalars['Bool']['output']>;
@@ -719,17 +720,20 @@ export type HomePageType_linkArgs = {
 export type HomePageTypeAutocomplete = {
   __typename?: 'HomePageTypeAutocomplete';
   Block?: Maybe<HomeSectionOneTypePropertyAutocomplete>;
+  BlockTwo?: Maybe<HomeSectionOneTypePropertyAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
 };
 
 export type HomePageTypeFacet = {
   __typename?: 'HomePageTypeFacet';
   Block?: Maybe<HomeSectionOneTypePropertyFacet>;
+  BlockTwo?: Maybe<HomeSectionOneTypePropertyFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
 };
 
 export type HomePageTypeOrderByInput = {
   Block?: InputMaybe<HomeSectionOneTypePropertyOrderByInput>;
+  BlockTwo?: InputMaybe<HomeSectionOneTypePropertyOrderByInput>;
   _metadata?: InputMaybe<IContentMetadataOrderByInput>;
   _minimumScore?: InputMaybe<Scalars['Float']['input']>;
   _modified?: InputMaybe<OrderBy>;
@@ -752,6 +756,7 @@ export type HomePageTypeOutputtotalArgs = {
 
 export type HomePageTypeWhereInput = {
   Block?: InputMaybe<HomeSectionOneTypePropertyWhereInput>;
+  BlockTwo?: InputMaybe<HomeSectionOneTypePropertyWhereInput>;
   _and?: InputMaybe<Array<InputMaybe<HomePageTypeWhereInput>>>;
   _fulltext?: InputMaybe<SearchableStringFilterInput>;
   _metadata?: InputMaybe<IContentMetadataWhereInput>;
