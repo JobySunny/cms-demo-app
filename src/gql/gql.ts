@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String, $domain: String) {\n  content: _Content(\n    where: {_or: [{_metadata: {key: {eq: $key}, version: {eq: $version}}}, {_metadata: {url: {hierarchical: {eq: $path}, base: {eq: $domain}}, version: {eq: $version}}}]}\n    locale: $locale\n  ) {\n    total\n    items {\n      _metadata {\n        types\n      }\n    }\n  }\n}": types.getContentTypeDocument,
     "fragment ReferenceData on ContentReference {\n  key\n  url {\n    ...LinkData\n  }\n}": types.ReferenceDataFragmentDoc,
+    "fragment LinkItemData on Link {\n  title\n  text\n  target\n  url {\n    ...LinkData\n  }\n}": types.LinkItemDataFragmentDoc,
     "fragment ElementData on _IElement {\n  ...IElementData\n}": types.ElementDataFragmentDoc,
     "fragment ExperienceData on _IExperience {\n  composition {\n    ...CompositionData\n  }\n}": types.ExperienceDataFragmentDoc,
     "fragment IElementData on _IElement {\n  _metadata {\n    ...IContentInfo\n  }\n  _type: __typename\n}": types.IElementDataFragmentDoc,
@@ -31,11 +32,13 @@ const documents = {
     "fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {\n  MainTitle\n  SecondaryTitle\n  Description\n  BannerImage {\n    ...LinkData\n  }\n}": types.HomeSectionOneTypePropertyDataFragmentDoc,
     "fragment PageSeoSettingsData on PageSeoSettings {\n  MetaTitle\n  MetaDescription\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsDataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
+    "fragment SimpleCardData on SimpleCard {\n  image {\n    ...LinkData\n  }\n}": types.SimpleCardDataFragmentDoc,
     "fragment ExperienceElementTestData on ExperienceElementTest {\n  title\n}": types.ExperienceElementTestDataFragmentDoc,
     "fragment TitleOneData on TitleOne {\n  Text\n}": types.TitleOneDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment DestinationPageTypeData on DestinationPageType {\n  DestinationID\n  ...ExperienceData\n}": types.DestinationPageTypeDataFragmentDoc,
     "fragment ExperienceOneData on ExperienceOne {\n  Title\n  ...ExperienceData\n}": types.ExperienceOneDataFragmentDoc,
+    "fragment PrideOfPlaceTypeData on PrideOfPlaceType {\n  Title\n  description\n  ImageList {\n    ...LinkItemData\n  }\n  ...ExperienceData\n}": types.PrideOfPlaceTypeDataFragmentDoc,
     "fragment HomePageTypeData on HomePageType {\n  Block {\n    ...HomeSectionOneTypePropertyData\n  }\n}": types.HomePageTypeDataFragmentDoc,
 };
 
@@ -61,6 +64,10 @@ export function gql(source: "query getContentType($key: String!, $version: Strin
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ReferenceData on ContentReference {\n  key\n  url {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment ReferenceData on ContentReference {\n  key\n  url {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment LinkItemData on Link {\n  title\n  text\n  target\n  url {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment LinkItemData on Link {\n  title\n  text\n  target\n  url {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -128,6 +135,10 @@ export function gql(source: "fragment PageSeoSettingsPropertyData on PageSeoSett
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment SimpleCardData on SimpleCard {\n  image {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment SimpleCardData on SimpleCard {\n  image {\n    ...LinkData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment ExperienceElementTestData on ExperienceElementTest {\n  title\n}"): (typeof documents)["fragment ExperienceElementTestData on ExperienceElementTest {\n  title\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -145,6 +156,10 @@ export function gql(source: "fragment DestinationPageTypeData on DestinationPage
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ExperienceOneData on ExperienceOne {\n  Title\n  ...ExperienceData\n}"): (typeof documents)["fragment ExperienceOneData on ExperienceOne {\n  Title\n  ...ExperienceData\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment PrideOfPlaceTypeData on PrideOfPlaceType {\n  Title\n  description\n  ImageList {\n    ...LinkItemData\n  }\n  ...ExperienceData\n}"): (typeof documents)["fragment PrideOfPlaceTypeData on PrideOfPlaceType {\n  Title\n  description\n  ImageList {\n    ...LinkItemData\n  }\n  ...ExperienceData\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

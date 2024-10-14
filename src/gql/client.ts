@@ -127,6 +127,26 @@ export const ExperienceOneDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
+export const LinkItemDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment LinkItemData on Link {
+  title
+  text
+  target
+  url {
+    ...LinkData
+  }
+}
+    `;
+export const PrideOfPlaceTypeDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment PrideOfPlaceTypeData on PrideOfPlaceType {
+  Title
+  description
+  ImageList {
+    ...LinkItemData
+  }
+  ...ExperienceData
+}
+    `;
 export const HomeSectionOneTypePropertyDataFragmentDoc = /*#__PURE__*/ gql`
     fragment HomeSectionOneTypePropertyData on HomeSectionOneTypeProperty {
   MainTitle
@@ -150,6 +170,7 @@ export const PageDataFragmentDoc = /*#__PURE__*/ gql`
   ...BlankExperienceData
   ...DestinationPageTypeData
   ...ExperienceOneData
+  ...PrideOfPlaceTypeData
   ...HomePageTypeData
 }
     `;
@@ -173,11 +194,19 @@ export const PageSeoSettingsDataFragmentDoc = /*#__PURE__*/ gql`
   GraphType
 }
     `;
+export const SimpleCardDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment SimpleCardData on SimpleCard {
+  image {
+    ...LinkData
+  }
+}
+    `;
 export const BlockDataFragmentDoc = /*#__PURE__*/ gql`
     fragment BlockData on _IContent {
   ...IContentData
   ...HomeSectionOneTypeData
   ...PageSeoSettingsData
+  ...SimpleCardData
 }
     `;
 export const getContentTypeDocument = /*#__PURE__*/ gql`
@@ -215,6 +244,7 @@ ${LinkDataFragmentDoc}
 ${HomeSectionOneTypeDataFragmentDoc}
 ${PageSeoSettingsDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
+${SimpleCardDataFragmentDoc}
 ${PageDataFragmentDoc}
 ${BlankExperienceDataFragmentDoc}
 ${PageSeoSettingsPropertyDataFragmentDoc}
@@ -226,6 +256,8 @@ ${ExperienceElementTestDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
 ${DestinationPageTypeDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
+${PrideOfPlaceTypeDataFragmentDoc}
+${LinkItemDataFragmentDoc}
 ${HomePageTypeDataFragmentDoc}
 ${HomeSectionOneTypePropertyDataFragmentDoc}`;
 export const getContentByPathDocument = /*#__PURE__*/ gql`
@@ -255,6 +287,8 @@ ${ExperienceElementTestDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
 ${DestinationPageTypeDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
+${PrideOfPlaceTypeDataFragmentDoc}
+${LinkItemDataFragmentDoc}
 ${HomePageTypeDataFragmentDoc}
 ${HomeSectionOneTypePropertyDataFragmentDoc}`;
 
