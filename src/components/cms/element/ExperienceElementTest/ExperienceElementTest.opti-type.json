@@ -1,0 +1,36 @@
+{
+  "key": "ExperienceElementTest",
+  "displayName": "ExperienceElementTest",
+  "description": "testing ",
+  "baseType": "element",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod"
+  ],
+  "usage": [
+    "property",
+    "instance"
+  ],
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "created": "2024-10-10T11:22:14.2356079+00:00",
+  "lastModified": "2024-10-10T11:23:02.2055485+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "title": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "TestTitle",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 200
+    }
+  }
+}

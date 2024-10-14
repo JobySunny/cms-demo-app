@@ -1,0 +1,4 @@
+fragment DestinationPageTypeData on DestinationPageType {
+  DestinationID
+  ...ExperienceData
+}

@@ -60,6 +60,11 @@ export const IElementDataFragmentDoc = /*#__PURE__*/ gql`
   _type: __typename
 }
     `;
+export const ExperienceElementTestDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment ExperienceElementTestData on ExperienceElementTest {
+  title
+}
+    `;
 export const TitleOneDataFragmentDoc = /*#__PURE__*/ gql`
     fragment TitleOneData on TitleOne {
   Text
@@ -68,6 +73,7 @@ export const TitleOneDataFragmentDoc = /*#__PURE__*/ gql`
 export const ElementDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ElementData on _IElement {
   ...IElementData
+  ...ExperienceElementTestData
   ...TitleOneData
 }
     `;
@@ -109,6 +115,12 @@ export const BlankExperienceDataFragmentDoc = /*#__PURE__*/ gql`
   ...ExperienceData
 }
     `;
+export const DestinationPageTypeDataFragmentDoc = /*#__PURE__*/ gql`
+    fragment DestinationPageTypeData on DestinationPageType {
+  DestinationID
+  ...ExperienceData
+}
+    `;
 export const ExperienceOneDataFragmentDoc = /*#__PURE__*/ gql`
     fragment ExperienceOneData on ExperienceOne {
   Title
@@ -136,6 +148,7 @@ export const PageDataFragmentDoc = /*#__PURE__*/ gql`
     fragment PageData on _IContent {
   ...IContentData
   ...BlankExperienceData
+  ...DestinationPageTypeData
   ...ExperienceOneData
   ...HomePageTypeData
 }
@@ -209,7 +222,9 @@ ${ExperienceDataFragmentDoc}
 ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
+${ExperienceElementTestDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
+${DestinationPageTypeDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
 ${HomePageTypeDataFragmentDoc}
 ${HomeSectionOneTypePropertyDataFragmentDoc}`;
@@ -236,7 +251,9 @@ ${ExperienceDataFragmentDoc}
 ${CompositionDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
+${ExperienceElementTestDataFragmentDoc}
 ${TitleOneDataFragmentDoc}
+${DestinationPageTypeDataFragmentDoc}
 ${ExperienceOneDataFragmentDoc}
 ${HomePageTypeDataFragmentDoc}
 ${HomeSectionOneTypePropertyDataFragmentDoc}`;

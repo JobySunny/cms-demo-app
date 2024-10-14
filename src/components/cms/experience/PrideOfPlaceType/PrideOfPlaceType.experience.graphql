@@ -1,0 +1,6 @@
+fragment PrideOfPlaceTypeData on PrideOfPlaceType {
+  Title
+  description
+  ImageList { ...LinkItemData }
+  ...ExperienceData
+}

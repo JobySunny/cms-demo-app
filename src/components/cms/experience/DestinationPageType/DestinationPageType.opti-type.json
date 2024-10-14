@@ -1,0 +1,38 @@
+{
+  "key": "DestinationPageType",
+  "displayName": "Destination Page Type",
+  "description": "",
+  "baseType": "experience",
+  "source": "",
+  "sortOrder": 0,
+  "features": [
+    "localization",
+    "versioning",
+    "publishPeriod",
+    "routing"
+  ],
+  "usage": [
+    "instance"
+  ],
+  "mayContainTypes": [
+    "*"
+  ],
+  "mediaFileExtensions": [],
+  "created": "2024-09-16T10:50:03.1714164+00:00",
+  "lastModified": "2024-09-16T10:51:32.8777235+00:00",
+  "lastModifiedBy": "jsunny@aldar.com",
+  "properties": {
+    "DestinationID": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Uniqe Id for Destination",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Categories",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 80
+    }
+  }
+}

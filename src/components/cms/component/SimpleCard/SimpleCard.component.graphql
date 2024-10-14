@@ -1,0 +1,3 @@
+fragment SimpleCardData on SimpleCard {
+  image { ...LinkData }
+}
